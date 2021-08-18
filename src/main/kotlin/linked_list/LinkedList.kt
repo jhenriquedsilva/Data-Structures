@@ -184,18 +184,4 @@ class LinkedList<T>: Iterable<T>,Collection<T>, MutableIterable<T>, MutableColle
         }
     }
 
-    // Creates a reversed Linked List
-    fun <T> addInReverse(list: LinkedList<T>, node: Node<T>) {
-        val next = node.next
-        if (next != null) {
-            addInReverse(list, next)
-        }
-        list.append(node.value)
-    }
-
-    fun <T: Comparable<T>> append(result: LinkedList<T>, node: Node<T>): Node<T>? {
-        result.append(node.value)
-        return node.next
-    }
-
 }

@@ -49,7 +49,7 @@ class ConcreteStack<T>(): Stack<T> {
     }
 
     companion object {
-        // Creates a stack if given a list
+        // Creates a stack if a list is given
         fun <T> create(items: Iterable<T>): Stack<T> {
             val stack = ConcreteStack<T>()
             for (item in items) {

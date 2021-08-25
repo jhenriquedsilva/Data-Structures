@@ -1,6 +1,9 @@
 package stack
 
+import linked_list.LinkedList
+
 fun main() {
+    /*
     println("using stack")
     var stack = ConcreteStack<Int>().apply {
         push(5)
@@ -21,5 +24,10 @@ fun main() {
     val stack3 = stackOf(1.8,4.5,8.9,2.0)
     println(stack3)
     println("Popped: ${stack3.pop()}")
+    */
+    println("Challenge 1")
+    var linkedList = LinkedList<Int>()
+    linkedList.append(4).append(5).append(6).append(2).append(9)
+    linkedList.printInReverse()
 
 }

@@ -2,7 +2,7 @@ package stack
 
 // Checking if a character is balanced within a String
 fun String.checkParentheses(): Boolean {
-    val stack = ConcreteStack<Char>()
+    val stack = ArrayListStack<Char>()
 
     for (character in this) {
         when (character) {

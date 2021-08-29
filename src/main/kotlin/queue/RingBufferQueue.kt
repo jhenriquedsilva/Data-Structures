@@ -24,4 +24,8 @@ class RingBufferQueue<T>(size: Int): Queue<T> {
     override fun peek(): T? {
         return ringBuffer.first
     }
+
+    fun jumpTheLine(element: T): Boolean {
+        return ringBuffer.jumpTheLine(element)
+    }
 }

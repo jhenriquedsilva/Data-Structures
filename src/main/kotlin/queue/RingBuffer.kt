@@ -38,6 +38,24 @@ class RingBuffer<T> (private val size: Int) {
         }
     }
 
+    // Need a fix
+    fun jumpTheLine(element: T): Boolean {
+        if (!isFull) {
+            if (array.size < size) {
+                if (readIndex == 0) {
+                    readIndex = size - 1
+                    array.add(readIndex, element)
+                } else {
+                    readIndex -= 1
+                    array.add(readIndex, element)
+                }
+            }
+            return true
+        } else {
+            return false
+        }
+    }
+
     fun read(): T? {
         return if (!isEmpty) {
             val element = array[readIndex % size]

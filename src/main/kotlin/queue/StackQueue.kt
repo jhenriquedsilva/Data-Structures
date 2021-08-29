@@ -1,10 +1,10 @@
 package queue
 
-import stack.ConcreteStack
+import stack.ArrayListStack
 
 class StackQueue<T>: Queue<T> {
-    private val leftStack = ConcreteStack<T>()
-    private val rightStack = ConcreteStack<T>()
+    private val leftStack = ArrayListStack<T>()
+    private val rightStack = ArrayListStack<T>()
 
     override val isEmpty: Boolean
         get() = leftStack.isEmpty && rightStack.isEmpty

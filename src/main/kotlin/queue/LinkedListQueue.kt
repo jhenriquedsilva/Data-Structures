@@ -20,6 +20,10 @@ class LinkedListQueue<T>: Queue<T> {
     }
 
     override fun peek(): T? {
-        TODO("Not yet implemented")
+        return list.first?.value
+    }
+
+    override fun toString(): String {
+        return list.toString()
     }
 }

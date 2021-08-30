@@ -7,9 +7,12 @@ class RingBuffer<T> (private val size: Int) {
     private var writeIndex = 0
 
     val count: Int
-        get() = availableSpaceForReading
+        get() = howManyElementsInTheQueue
 
-    private val availableSpaceForReading: Int
+   // private val availableSpaceForReading: Int
+        // get() = (writeIndex - readIndex)
+    
+    private val howManyElementsInTheQueue
         get() = (writeIndex - readIndex)
 
     val first: T?
@@ -18,11 +21,17 @@ class RingBuffer<T> (private val size: Int) {
     val isEmpty: Boolean
         get() = (count == 0)
 
-    private val availableSpaceForWriting: Int
-        get() = (size - availableSpaceForReading)
+    // private val availableSpaceForWriting: Int
+        // get() = (size - availableSpaceForReading)
+        
+    private val availableSpace: Int
+        // get() = (size - howManyElementsInTheQueue)
 
+    // val isFull: Boolean
+        // get() = (availableSpaceForWriting == 0)
+        
     val isFull: Boolean
-        get() = (availableSpaceForWriting == 0)
+        get() = (availableSpace == 0)
 
     fun write(element: T): Boolean {
         return if (!isFull) {
@@ -66,8 +75,9 @@ class RingBuffer<T> (private val size: Int) {
         }
     }
 
+    // I modified the  variable name over here
     override fun toString(): String {
-        val values = (0 until availableSpaceForReading).map { offset ->
+        val values = (0 until howManyItemsInTheQueue).map { offset ->
             "${array[(readIndex + offset) % size]!!}"
         }
         return values.joinToString(prefix = "[", separator = ", ", postfix = "]")

@@ -25,7 +25,7 @@ class RingBufferQueue<T>(size: Int): Queue<T> {
         return ringBuffer.first
     }
 
-    fun jumpTheLine(element: T): Boolean {
-        return ringBuffer.jumpTheLine(element)
+    fun jump(element: T): Boolean {
+        return ringBuffer.jump(element)
     }
 }

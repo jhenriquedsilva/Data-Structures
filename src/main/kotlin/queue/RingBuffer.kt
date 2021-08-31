@@ -48,8 +48,7 @@ class RingBuffer<T> (private val size: Int) {
         }
     }
 
-    // Need a fix
-    fun jumpTheLine(element: T): Boolean {
+    fun jump(element: T): Boolean {
         if (isEmpty) {
             array.add(element)
             writeIndex++
@@ -66,6 +65,7 @@ class RingBuffer<T> (private val size: Int) {
                     newElement = elementToBeShifted
                     temporaryIndex++
                 }
+
                 array.add(newElement)
                 writeIndex++
                 return true

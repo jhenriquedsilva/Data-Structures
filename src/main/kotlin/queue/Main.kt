@@ -1,42 +1,31 @@
 package queue
 
 fun main() {
-    /*
-    println("Queue with ArrayList")
-    val queue1 = ArrayListQueue<String>()
-    queue1.apply {
-        enqueue("Jose")
-        enqueue("Fernando")
-        enqueue("Marcelo")
-    }
-    println(queue1)
-    queue1.dequeue()
-    println(queue1)
-    println("Next up: ${queue1.peek()}")
-    */
 
     println("Queue with Ring Buffer")
-    val queue2 = RingBufferQueue<String>(4)
-    queue2.enqueue("Ray")
-    queue2.enqueue("Brian")
-    queue2.enqueue("Eric")
-    queue2.jumpTheLine("Fernando")
-    // cheia
-    println(queue2)
-    queue2.dequeue()
-    queue2.dequeue()
-    // esvazio 2
-    queue2.enqueue("José")
-    queue2.enqueue("Louco")
-    println(queue2)
-    println(queue2.dequeue())
-    queue2.enqueue("Maluco")
-    println(queue2)
-    queue2.dequeue()
-    queue2.jumpTheLine("Crazy")
-    println(queue2)
-    println(queue2.dequeue())
-    queue2.jumpTheLine("Craziest")
-    queue2.dequeue()
+
+    val queue = RingBufferQueue<String>(4)
+    queue.enqueue("Ray") // Ray is the first element
+    queue.enqueue("Brian") // Brian is the last one
+    queue.jumpTheLine("Eric") // Eric is the new first one
+    queue.jumpTheLine("Fernando") // Fernando is the new first one
+    println(queue)
+    // The queue is full
+    // Can't add a new element. If I try to add a new one, the queue does not change
+    println(queue.enqueue("Alex")) // Show return false as the queue is full
+    queue.dequeue() // Eric is the first one right now and Brian is the last one
+    queue.dequeue() // Ray is the first one right one and Brian is the last one
+    println(queue)
+
+    queue.jumpTheLine("Caio") // Caio is the first one right now
+    println(queue)
+    queue.enqueue("José") // José is the lst one right now
+    println(queue)
+
+    println(queue.dequeue()) // Should print Caio
+    println(queue.dequeue()) // Should print Ray
+    println(queue.dequeue()) // Should print Brain
+    println(queue.dequeue()) // Should print José
+    println(queue.dequeue()) // Shuld return null because the queue is empty
 
 }

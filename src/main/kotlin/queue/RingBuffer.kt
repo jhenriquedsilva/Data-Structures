@@ -1,5 +1,7 @@
 package queue
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 class RingBuffer<T> (private val size: Int) {
 
     private var array = ArrayList<T?>(size)

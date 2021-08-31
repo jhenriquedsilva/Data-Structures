@@ -1,5 +1,7 @@
 package queue
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 class RingBufferQueue<T>(size: Int): Queue<T> {
 
     private val ringBuffer: RingBuffer<T> = RingBuffer(size)

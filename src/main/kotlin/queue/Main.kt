@@ -1,5 +1,7 @@
 package queue
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 fun main() {
 
     println("Queue with Ring Buffer")

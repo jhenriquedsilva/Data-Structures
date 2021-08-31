@@ -1,5 +1,7 @@
 package queue
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 interface Queue<T> {
     fun enqueue(element: T): Boolean
 

@@ -1,5 +1,7 @@
 package stack
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 fun main() {
     print("Enter the text to be reversed: ")
     val text = readLine()!! // Gets the input
@@ -10,7 +12,7 @@ fun main() {
         var stack: FixedArrayListStack<Char>? = FixedArrayListStack(word.length)
         // Each character is push into the stack
         for (char in word) {
-            stack?.push(char.toUpperCase())
+            stack?.push(char.toLowerCase())
         }
         // The word is printed in reverse order
         print(stack)

@@ -1,5 +1,7 @@
 package stack
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 interface Stack<Element> {
     val count: Int
       get

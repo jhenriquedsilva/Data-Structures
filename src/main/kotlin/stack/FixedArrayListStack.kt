@@ -1,5 +1,7 @@
 package stack
 
+// José Henrique da Silva e Caio André Barros Gonçalves
+
 class FixedArrayListStack<T>(private val size: Int): Stack<T> {
 
     private val storage = ArrayList<T>(size)

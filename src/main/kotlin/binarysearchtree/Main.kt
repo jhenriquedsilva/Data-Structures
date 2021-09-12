@@ -29,9 +29,29 @@ fun main() {
 
     println("Creating a binary search tree")
 
-    val bst = BinarySearchTree<Int>()
-    (0..4).forEach {
-        bst.insert(it)
+    val exampleTree = BinarySearchTree<Int>().apply {
+        insert(3)
+        insert(1)
+        insert(4)
+        insert(0)
+        insert(2)
+        insert(5)
     }
-    println(bst)
+
+    println(exampleTree)
+
+    println("finding a node")
+
+    if (exampleTree.contains(5)) {
+        println("Found 5!")
+    } else {
+        println("Couldn't find 5")
+    }
+
+    println("Removing a node")
+    println("Tree before removal")
+    println(exampleTree)
+    exampleTree.remove(3)
+    println("Tree after removing root:")
+    println(exampleTree)
 }

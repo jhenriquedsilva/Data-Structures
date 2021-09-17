@@ -1,5 +1,6 @@
 package binarysearchtree
 
+// Caio André Barros Gonçalves, Jonathas dos Santos Andrade e José Henrique da Silva
 fun main() {
     // Elements are inserted
     val tree = BinarySearchTree<Int>().apply {

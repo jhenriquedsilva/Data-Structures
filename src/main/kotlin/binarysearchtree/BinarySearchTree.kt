@@ -9,7 +9,7 @@ class BinarySearchTree<T: Comparable<T>>() {
     // If root is is null, so the the tree is eampty
     override fun toString() = root?.toString() ?: "empty tree"
 
-    // Inserted is implemented using these two following methods
+    // Insert is implemented using these two following methods
     // This first one is public
     fun insert(value: T) {
         // Tha assignments are made recursively.
@@ -35,11 +35,15 @@ class BinarySearchTree<T: Comparable<T>>() {
         return node
     }
 
+    // Remove is implemented using these two following methods
+    // This first one is public
     fun remove(value: T) {
         root = remove(root, value)
     }
 
+    // This second one is private
     private fun remove(node: BinaryNode<T>?, value: T): BinaryNode<T>? {
+        // If current is null, return null
         node ?: return null
 
         when {

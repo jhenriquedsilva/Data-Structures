@@ -1,5 +1,7 @@
 package binarysearchtree
 
+// Caio André Barros Gonçalves, Jonathas dos Santos Andrade e José Henrique da Silva
+
 typealias Visitor<T> = (T) -> Unit
 
 class BinaryNode<T>(var value: T) {

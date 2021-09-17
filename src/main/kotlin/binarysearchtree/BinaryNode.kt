@@ -9,6 +9,8 @@ class BinaryNode<T>(var value: T) {
     val min: BinaryNode<T>?
         get() = leftChild?.min ?: this
 
+    // The two following functions just print the tree
+    // in a beautiful format
     override fun toString() = diagram(this)
 
     private fun diagram(node: BinaryNode<T>?,
@@ -29,8 +31,13 @@ class BinaryNode<T>(var value: T) {
     }
 
     fun traverseInOrder(visit: Visitor<T>) {
+        // If the currrent node has a left child,
+        // recursively visit this child first
         leftChild?.traverseInOrder(visit)
+        // Then visit the node itself
         visit(value)
+        // If the current node has a right child,
+        // recursively visit this child
         rightChild?.traverseInOrder(visit)
     }
 

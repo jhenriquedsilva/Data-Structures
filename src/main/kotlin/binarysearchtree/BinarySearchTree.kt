@@ -1,5 +1,7 @@
 package binarysearchtree
 
+// Caio André Barros Gonçalves, Jonathas dos Santos Andrade e José Henrique da Silva
+
 class BinarySearchTree<T: Comparable<T>>() {
     // Initially, the binary search tree is empty
     var root: BinaryNode<T>? = null

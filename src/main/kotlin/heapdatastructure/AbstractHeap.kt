@@ -71,6 +71,49 @@ abstract class AbstractHeap<Element>(): Heap<Element> {
             parent = candidate
         }
     }
+
+    override fun remove(index: Int): Element? {
+        // Not within the bounds of the array
+        if (index >= counter) return null
+
+        return if (index == counter - 1) {
+            elements.removeAt(counter - 1)
+        } else {
+            Collections.swap(elements,index,counter - 1)
+            val item = elements.removeAt(counter - 1)
+            siftDown(index)
+            siftUp(index)
+            item
+        }
+    }
+
+    private fun index(element: Element, i: Int): Int? {
+        if (i >= counter) {
+            return null
+        }
+        if ((compare(element, elements[i]) > 0)) {
+            return null
+        }
+        if (element == elements[i]) {
+            return i
+        }
+        val leftChildIndex = index(element,leftChildIndex(i))
+        if (leftChildIndex != null) return leftChildIndex
+
+        val rightChildIndex = index(element,rightChildIndex(i))
+        if (rightChildIndex != null) return rightChildIndex
+
+        return null
+    }
+
+    protected fun heapify(values: ArrayList<Element>) {
+        elements = values
+        if (!elements.isEmpty()) {
+            (counter / 2 downTo 0).forEach { index ->
+                siftDown(index)
+            }
+        }
+    }
     // End of remove immplementation
     abstract fun compare(a: Element, b: Element): Int
 }

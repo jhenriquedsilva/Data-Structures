@@ -6,7 +6,7 @@ class BinarySearchTree<T: Comparable<T>>() {
     // Initially, the binary search tree is empty
     var root: BinaryNode<T>? = null
 
-    // If root is is null, so the the tree is eampty
+    // If root is  null, so the tree is empty
     override fun toString() = root?.toString() ?: "empty tree"
 
     // Insert is implemented using these two following methods

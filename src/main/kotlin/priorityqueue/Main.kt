@@ -23,5 +23,4 @@ fun main() {
         println(priorityQueue2.dequeue())
     }
 }
-    }
-}
+
